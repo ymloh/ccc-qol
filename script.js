@@ -127,6 +127,8 @@ function newModal(fields, callback) {
     doneButton.innerText = "✔"
     doneButton.addEventListener("click", () => {
         // console.log(userInput)
+        [...modal.querySelectorAll("input")].map(x => userInput[x.name] = {"value": x.value, "type": x.type})
+        
         callback(userInput)
         closeModal()
     })
@@ -170,7 +172,7 @@ function generateButtons() {
                 preview_panel.innerText = line
             })
 
-            let inputFields = line.match(/\[[\w\s]*,\s?\w+\]/g)
+            let inputFields = line.match(/\[[\w\s\d.]*,\s?\w+\]/g)
 
 
             if (!inputFields) {
