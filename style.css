@@ -120,3 +120,16 @@ input {
     padding: 0.5em;
     border-width: 0;
 }
+
+div.input-div {
+    display: none;
+    flex-flow: row nowrap;
+    border-radius: 0.5em;
+    border: 1px solid white;
+    color: white;
+    margin: 0.25em;
+}
+
+div.input-div label {
+    margin: 1em;
+}
