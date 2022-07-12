@@ -3,6 +3,10 @@
     /* line-height: 1.5em; */
 }
 
+:root {
+    --main-panel-width: 40em;
+}
+
 body {
     display: flex;
     flex-flow: row nowrap;
@@ -13,7 +17,7 @@ body {
 }
 
 div.main_panel {
-    width: 40em;
+    width: var(--main-panel-width);
     height: 100vh;
     /* border: 2px solid red; */
 
@@ -22,13 +26,15 @@ div.main_panel {
 }
 
 div#preview {
-    /* position: absolute; */
+    position: fixed;
+    right: var(--main-panel-width);
+    max-width: var(--main-panel-width);
     margin: 1em;
     padding: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20em;
+    /* height: 20em; */
     line-height: 1.75em;
     
     color: #777;

@@ -168,8 +168,9 @@ function generateButtons() {
             lines_speaking_panel.appendChild(button)
             let line = lines[line_title]["line"]
 
-            button.addEventListener('mouseover', function() {
-                preview_panel.innerText = line
+            button.addEventListener('mouseover', function(evt) {
+                preview_panel.innerHTML = `<span>${line}</span>`.replace(/\[[\w\s\d.]*,\s?\w+\]/g, "<span style='color: #58f;'>$&</span>")
+                preview_panel.style.top = `${Math.min(evt.clientY - 50, window.innerHeight - preview_panel.clientHeight)}px`
             })
 
             let inputFields = line.match(/\[[\w\s\d.]*,\s?\w+\]/g)
